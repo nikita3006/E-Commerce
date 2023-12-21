@@ -2,8 +2,6 @@ import React from 'react';
 import SignUp from './authentication/SignUp';
 import LogIn from './authentication/LogIn';
 import { Route, Routes, redirect} from 'react-router-dom';
-import Data from './Components/Data';
-import Form from './Components/Form';
 import { useContext } from 'react';
 import AuthContext from './Store/AuthContext';
 import Error from './Components/Error';
@@ -31,8 +29,8 @@ function App() {
     <Route path="/home" element={<Home/>} />
     <Route path="/aboutus" element={<AboutUs/>} />
     <Route path="/cart" element={<Cart/>} />
-    {authCtx.isLoggedIn && <Route path="/login" element={<Data/>} /> }
-    {authCtx.isLoggedIn && <Route path="/dataList" element={<Form/>} />}
+  
+
     {authCtx.isLoggedIn && <Route path="/showproduct" element={<ShowProduct/>} exact /> }
     {authCtx.isLoggedIn && <Route path="/showproduct/detailPage/:id" element={<ProductDetail/>} /> }
     <Route path= "*"  element={<Error/>} />

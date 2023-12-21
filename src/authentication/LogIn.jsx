@@ -58,7 +58,7 @@ function LogIn() {
     try {
       e.preventDefault();
       schema.parse({ email, password, firstName, phoneNumber });
-      const response = await fetch("https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCEWLloGKZlOw2CbZQg7fR_e-OSpgUl2i0", {
+      const response = await fetch("https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCrlV5MWuup7EMTd6AkwJVuA_aH7aSmWuY", {
         method: "POST",
         body: JSON.stringify({
           email,

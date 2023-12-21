@@ -55,23 +55,36 @@ function SignUp() {
     try {
       e.preventDefault();
       setError(null);
-
+  
       const validationData = {
         email: emailRef.current.value,
         password: passwordRef.current.value,
       };
-
+  
       schema.parse(validationData);
-
-      // Your fetch and signup logic here
-
-      alert("Account created successfully");
-      navigate("/login");
+  
+      const response = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCrlV5MWuup7EMTd6AkwJVuA_aH7aSmWuY', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(validationData),
+      });
+  
+      if (!response.ok) {
+        throw new Error('Sign-up failed');
+      }
+  
+      const responseData = await response.json();
+  
+      // Handle the response data as needed
+  
+      alert('Account created successfully');
+      navigate('/login');
     } catch (error) {
       setError(error.message || 'Sign-up failed');
     }
   }
-
   return (
     <Parallax bgImage={back} strength={800} style={{ height: '100vh' }}>
       <SignUpContainer >
