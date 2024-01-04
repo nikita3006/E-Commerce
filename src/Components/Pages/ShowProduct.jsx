@@ -12,6 +12,8 @@ function ShowProduct() {
   const productCtx = useContext(ProductContext);
   const cartCtx = useContext(CartContext) 
   // console.log(productCtx.products);
+  // const email = localStorage.getItem("email")
+  // console.log(email)
 
   return (
     <Row>

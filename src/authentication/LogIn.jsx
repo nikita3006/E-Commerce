@@ -73,7 +73,7 @@ function LogIn() {
         throw new Error('Error with response');
       }
       const data = await response.json();
-      authCtx.logIn(data.idToken); //unique key
+      authCtx.logIn(data.idToken,data.email); //unique key
       console.log(data);
       navigate("/home");
     } catch (error) {

@@ -29,9 +29,7 @@ function App() {
     <Route path="/home" element={<Home/>} />
     <Route path="/aboutus" element={<AboutUs/>} />
     <Route path="/cart" element={<Cart/>} />
-  
-
-    {authCtx.isLoggedIn && <Route path="/showproduct" element={<ShowProduct/>} exact /> }
+    <Route path="/showproduct" element={<ShowProduct/>} exact /> 
     {authCtx.isLoggedIn && <Route path="/showproduct/detailPage/:id" element={<ProductDetail/>} /> }
     <Route path= "*"  element={<Error/>} />
   </Routes>
